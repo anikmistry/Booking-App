@@ -27,6 +27,10 @@ mongoose.connection.on("disconnected", ()=>{
 })
 
 //middlewares
+app.use(express.json())
+app.use(express.json({limit:"20kb"}))
+app.use(express.urlencoded({extended:true}))
+app.use(express.static("public"))
 app.use("/api/auth", authRoute)
 app.use("/api/hotels", hotelsRoute)
 app.use("/api/auth", roomsRoute)
