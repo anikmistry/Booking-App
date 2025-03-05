@@ -5,6 +5,7 @@ import authRoute from "./route/auth.js"
 import hotelsRoute from "./route/hotels.js"
 import roomsRoute from "./route/rooms.js"
 import userRoute from "./route/user.js"
+import cookieParser from "cookie-parser"
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ mongoose.connection.on("disconnected", ()=>{
 })
 
 //middlewares
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.json({limit:"20kb"}))
 app.use(express.urlencoded({extended:true}))
