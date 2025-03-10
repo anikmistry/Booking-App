@@ -36,7 +36,7 @@ app.use(express.static("public"))
 app.use("/api/auth", authRoute)
 app.use("/api/hotels", hotelsRoute)
 app.use("/api/auth", roomsRoute)
-app.use("/api/auth", userRoute)
+app.use("/api/user", userRoute)
 
 app.use((err,req,res,next)=>{
   const errorStatus = err.status || 500;
